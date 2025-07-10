@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.login-icon {
+    display: block;
+    margin: 0 auto 20px auto; 
+    width: 64px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.link a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Estilos para mensagens flash */
+.flash {
+    padding: 1;
+    text-align: center;
+    font-size: 14px;
+}
+
+.flash.danger {
+    color: #d9534f;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    border-radius: 15px;
+    padding: 0.5rem;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0; /* Espaçamento acima e abaixo */
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dee2e6; /* Linha divisória */
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.google-button {
+    display: flex; /* Permite alinhar ícone e texto */
+    align-items: center; /* Alinha verticalmente ícone e texto */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dadce0; /* Borda sutil */
+    border-radius: 15px;
+    background-color: #ffffff; /* Fundo branco */
+    color: #3c4043; /* Cor do texto Google */
+    font-size: 1em;
+    text-decoration: none; /* Remove sublinhado */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    box-sizing: border-box; /* Importante para padding e borda */
+}
+
+.google-button:hover {
+    background-color: #f8f9fa; /* Leve mudança de cor no hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil no hover */
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px; /* Mais espaçamento entre ícone e texto */
+}
+
+.google-text {
+    font-weight: 500; /* Peso da fonte do texto do botão Google */
+}
