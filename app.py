@@ -19,8 +19,8 @@ GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 if not GOOGLE_CLIENT_ID or not GOOGLE_CLIENT_SECRET:
     raise ValueError("Credenciais GOOGLE_CLIENT_ID ou GOOGLE_CLIENT_SECRET não definidas no .env ou variáveis de ambiente.")
 
+# Configuração do OAuth
 oauth = OAuth(app)
-
 oauth.register(
     name='google',
     client_id=GOOGLE_CLIENT_ID,
@@ -34,6 +34,7 @@ oauth.register(
 DATABASE = os.path.join(app.instance_path, 'database.db')
 os.makedirs(app.instance_path, exist_ok=True)
 
+# Função para inicializar o banco de dados e criar a tabela de usuários
 def init_db():
     with app.app_context():
         conn = get_db()
@@ -49,7 +50,7 @@ def init_db():
         ''')
         conn.commit()
 
-        # --- Inserir usuário de teste ---
+        # Inserir usuário de teste
         test_username = "teste"
         test_email = "teste@gmail.com"
         test_password_plain = "123"
@@ -70,6 +71,7 @@ def init_db():
         else:
             print(f"Usuário de teste '{test_username}' já existe no banco de dados.")
 
+# Função para obter a conexão com o banco de dados
 def get_db():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
@@ -92,7 +94,7 @@ def login():
             conn = get_db()
             cursor = conn.cursor()
             cursor.execute(
-                "SELECT * FROM users WHERE (username = ? OR email = ?) AND password IS NOT NULL", (username_or_email, username_or_email) #Passa o valor duas vezes para os dois placeholders
+                "SELECT * FROM users WHERE (username = ? OR email = ?) AND password IS NOT NULL", (username_or_email, username_or_email) # Passa o valor duas vezes para os dois placeholders
             )
             user = cursor.fetchone()
         except Exception as e:
@@ -113,7 +115,7 @@ def login():
 
     return render_template('login.html')
 
-# --- Rotas para Autenticação Google ---
+# Rotas para Autenticação Google
 @app.route('/auth/google')
 def google_login():
     if 'user_id' in session:

@@ -136,7 +136,7 @@ button:hover {
     margin-left: .25em;
 }
 
-.google-button {
+.social-button {
     display: flex; /* Permite alinhar ícone e texto */
     align-items: center; /* Alinha verticalmente ícone e texto */
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
@@ -145,7 +145,7 @@ button:hover {
     border: 1px solid #dadce0; /* Borda sutil */
     border-radius: 15px;
     background-color: #ffffff; /* Fundo branco */
-    color: #3c4043; /* Cor do texto Google */
+    color: #3c4043; /* Cor do texto social */
     font-size: 1em;
     text-decoration: none; /* Remove sublinhado */
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
@@ -153,17 +153,17 @@ button:hover {
     box-sizing: border-box; /* Importante para padding e borda */
 }
 
-.google-button:hover {
+.social-button:hover {
     background-color: #f8f9fa; /* Leve mudança de cor no hover */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil no hover */
 }
 
-.google-icon {
+.social-icon {
     width: 20px;
     height: 20px;
     margin-right: 12px; /* Mais espaçamento entre ícone e texto */
 }
 
-.google-text {
-    font-weight: 500; /* Peso da fonte do texto do botão Google */
+.social-text {
+    font-weight: 500; /* Peso da fonte do texto do botão social */
 }
